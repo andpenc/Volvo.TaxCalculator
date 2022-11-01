@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "b252dc99-0cef-49f6-8144-afb1f7539009",
+		"name": "VolvoCongestionTax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calculate CongestionTax",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Dates\": [\r\n        \"2013-02-08 06:27:00\",\r\n        \"2013-02-08 06:20:27\",\r\n        \"2013-02-08 14:35:00\",\r\n        \"2013-02-08 15:29:00\",\r\n        \"2013-02-08 15:47:00\",\r\n        \"2013-02-08 16:01:00\",\r\n        \"2013-02-08 16:48:00\",\r\n        \"2013-02-08 17:49:00\",\r\n        \"2013-02-08 18:29:00\",\r\n        \"2013-02-08 18:35:00\"\r\n    ],\r\n    \"Vehicle\": {\r\n        \"VehicleType\": \"Car\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/v1/CongestionTax",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"v1",
+						"CongestionTax"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
