@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Volvo.TaxCalculator.Functions.Constants
+﻿namespace Volvo.TaxCalculator.Functions.Constants
 {
     public static class Routes
     {

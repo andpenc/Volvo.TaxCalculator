@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Volvo.TaxCalculator.Core.Models;
 
 namespace Volvo.TaxCalculator.DTO.CongestionTax

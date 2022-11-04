@@ -9,7 +9,8 @@ using Newtonsoft.Json;
 using Volvo.TaxCalculator.Functions.Constants;
 using Volvo.TaxCalculator.DTO.CongestionTax;
 using Volvo.TaxCalculator.Core.Interfaces;
-using Volvo.TaxCalculator.Core.Models;
+using System.Net;
+using AzureFunctions.Extensions.Swashbuckle.Attribute;
 
 namespace Volvo.TaxCalculator.Functions.Functions
 {
@@ -23,8 +24,12 @@ namespace Volvo.TaxCalculator.Functions.Functions
         }
 
         [FunctionName(nameof(CalculateCongestionTax))]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.Created)]
+        [RequestHttpHeader("x-ms-session-id", true)]        
         public async Task<IActionResult> CalculateCongestionTax(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = Routes.CONGESTION_TAX)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = Routes.CONGESTION_TAX)]
+            [RequestBodyType(typeof(CongestionTaxRequest), "Congestion tax request")]
+            HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
